@@ -18,7 +18,7 @@ router.post("/", withAuth, (req, res) => {
 
 router.put("/:id", withAuth, (req, res) => {
    
-    Post.update({
+    Post.update(req.body,{
             where:{id: req.params.id}
     })
     .then(
