@@ -5,7 +5,7 @@ const editFormHandler = async function(event){
     const postId = document.getElementById('post-id')
     
         fetch('/api/post/'+postId.value,{
-            method: 'POST',
+            method: 'PUT',
             body: JSON.stringify({title: titleElement.value, body: bodyElement.value}),
             headers:{
                 "Content-Type": "application/json"

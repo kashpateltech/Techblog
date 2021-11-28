@@ -18,7 +18,7 @@ router.post("/", withAuth, (req, res) => {
 
 router.put("/:id", withAuth, (req, res) => {
    
-    Post.update(req.body, {
+    Post.update({
             where:{id: req.params.id}
     })
     .then(
@@ -34,7 +34,7 @@ router.put("/:id", withAuth, (req, res) => {
 
   router.delete("/:id", withAuth, (req, res) => {
     
-    Post.destroy(req.body, {
+    Post.destroy({
             where:{id: req.params.id}
     })
     .then(
