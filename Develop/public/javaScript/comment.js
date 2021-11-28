@@ -7,7 +7,7 @@ const commentFormHandler = async function(event){
             method: 'POST',
             body: JSON.stringify({postId, body}),
             headers:{
-                'Content-Tpye': 'application/json'
+                "Content-Type": "application/json"
             }
         })
         document.location.reload()

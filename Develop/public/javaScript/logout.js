@@ -2,7 +2,7 @@
         fetch('/api/user/logout',{
             method: 'POST',
             headers:{
-                'Content-Tpye': 'application/json'
+                "Content-Type": "application/json"
             }
         })
        .then(()=>{

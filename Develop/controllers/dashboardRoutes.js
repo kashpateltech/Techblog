@@ -8,7 +8,7 @@ router.get("/", withAuth, (req, res) => {
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      res.render("all-posts", { layout: "dashboard", posts });
+      res.render("all-posts-admin", { layout: "dashboard", posts });
     })
     .catch((err) => {
       console.log(err);

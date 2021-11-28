@@ -8,7 +8,7 @@ const newFormHandler = async function(event){
             method: 'POST',
             body: JSON.stringify({title, body}),
             headers:{
-                'Content-Tpye': 'application/json',
+                "Content-Type": "application/json",
                 authorization: `Bearer ${token}`
             }
         })

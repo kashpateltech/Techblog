@@ -8,7 +8,7 @@ const editFormHandler = async function(event){
             method: 'POST',
             body: JSON.stringify({title: titleElement.value, body: bodyElement.value}),
             headers:{
-                'Content-Tpye': 'application/json'
+                "Content-Type": "application/json"
             }
         })
        .then(()=>{

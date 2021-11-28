@@ -8,7 +8,7 @@ const loginFormHandler = async function(event){
             method: 'POST',
             body: JSON.stringify({username: userNameElement.value, password: passwordElement.value}),
             headers:{
-                'Content-Tpye': 'application/json'
+                "Content-Type": "application/json"
             }
         })
        .then(()=>{
