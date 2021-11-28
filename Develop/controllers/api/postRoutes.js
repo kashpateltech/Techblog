@@ -6,7 +6,7 @@ router.post("/", withAuth, (req, res) => {
     const body = req.body
     Post.create({
         ...body,
-        userID: req.session.userID
+        user_id: req.session.userID
     })
     .then(
         newPost => {
@@ -17,7 +17,7 @@ router.post("/", withAuth, (req, res) => {
 
 
 router.put("/:id", withAuth, (req, res) => {
-    const body = req.body
+   
     Post.update(req.body, {
             where:{id: req.params.id}
     })
@@ -33,7 +33,7 @@ router.put("/:id", withAuth, (req, res) => {
   });
 
   router.delete("/:id", withAuth, (req, res) => {
-    const body = req.body
+    
     Post.destroy(req.body, {
             where:{id: req.params.id}
     })

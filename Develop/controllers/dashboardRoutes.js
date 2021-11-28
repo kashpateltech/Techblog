@@ -4,7 +4,7 @@ const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, (req, res) => {
   Post.findAll({
-    where: { userID: req.session.userID },
+    where: { user_id: req.session.userID },
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
