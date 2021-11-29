@@ -8,7 +8,10 @@ router.get("/", withAuth, (req, res) => {
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      res.render("all-posts-admin", { layout: "dashboard", posts });
+      res.render("all-posts-admin", { 
+        // layout: "dashboard", 
+        loggedIn: req.session.loggedIn,
+        posts });
     })
     .catch((err) => {
       console.log(err);
@@ -17,7 +20,9 @@ router.get("/", withAuth, (req, res) => {
 });
 
 router.get("/new", withAuth, (req, res) => {
-  res.render("new-post", { layout: "dashboard" });
+  res.render("new-post", {
+    loggedIn: req.session.loggedIn
+  });
 });
 
 router.get("/", withAuth, (req, res) => {
@@ -25,7 +30,8 @@ router.get("/", withAuth, (req, res) => {
     .then((dbPostData) => {
         if(dbPostData){
             const post = post.get({ plain: true });
-            res.render("edit-post", { layout: "dashboard", post });
+            res.render("edit-post", {  post,
+              loggedIn: req.session.loggedIn });
         }else{
             res.status(404).end()
         }
@@ -40,8 +46,8 @@ router.get("/edit/:id", withAuth, (req, res) => {
         const post = dbPostData.get({ plain: true });
         
         res.render("edit-post", {
-          layout: "dashboard",
-          post
+          
+          post, loggedIn: req.session.loggedIn
         });
       } else {
         res.status(404).end();

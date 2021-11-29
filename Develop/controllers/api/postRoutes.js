@@ -12,7 +12,9 @@ router.post("/", withAuth, (req, res) => {
         newPost => {
             res.json(newPost)
         }
-    )
+    ).catch((err)=>{
+        console.log(err)
+    })
   });
 
 
