@@ -31,7 +31,7 @@ connect-session-sequlize
 * There is a front end designed created for this app.
 * Used heroku to showcase the functionality of the app
 
-[Heroku Link] (https://kash-tech-blog.herokuapp.com/) 
+[Heroku Link](https://kash-tech-blog.herokuapp.com/) 
 
 <a name="links"></a>
 
